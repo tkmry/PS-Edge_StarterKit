@@ -8,6 +8,7 @@ MIT ライセンス
 下記環境にて動作確認済み。
 
 * Windows 10 Pro 21H2
+* Windows 11 Home 21H2
 
 # 準備
 init.bat を起動する。
