@@ -5,6 +5,12 @@
         Title="PS-Edge_Default" Height="450" Width="800"
     >
     <DockPanel x:Name="RootDock">
-        <wv2:WebView2 Name="webView" Source="https://www.google.com/" />
+        <DockPanel DockPanel.Dock="Top">
+            <Button  Name="pageChange"  Content="Go!"  DockPanel.Dock="Right" />
+            <TextBox Name="pageURL" Text="https://..."/>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <wv2:WebView2 Name="webView"/>
+        </DockPanel>
     </DockPanel>
 </Window>

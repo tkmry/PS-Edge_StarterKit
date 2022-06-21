@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>PS-Edge Test</title>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('#submitTitle').addEventListener('click', () => {
+          window.chrome.webview.postMessage({PageTitle: document.querySelector('#inputTitle').value});
+        });
+        window.chrome.webview.addEventListener('message', function(event) {
+          document.querySelector('#xPos').innerText = event.data.xPos;
+          document.querySelector('#yPos').innerText = event.data.yPos;
+        });
+      })
+    </script>
+  </head>
+  <body>
+    <p>Window Title Set: <input type="text" id="inputTitle" /><button id="submitTitle">Set Title</button></p>
+    <p>Current Window Position: X=<span id="xPos"></span>, Y=<span id="yPos"></span>.</p>
+  </body>
+</html>
